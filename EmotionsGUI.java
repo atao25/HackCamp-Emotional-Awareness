@@ -51,7 +51,7 @@ public class EmotionsGUI {
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
         profileFrame.setVisible(true);
-        //profileFrame.setResizable(false);
+        profileFrame.setResizable(false);
         profileFrame.add(profilePanel);
         makeProfileDetails();
 
@@ -78,7 +78,7 @@ public class EmotionsGUI {
         primaryFrame.setSize(profileDimension.width, profileDimension.height);
         primaryPanel = setUpPrimaryPanel();
         primaryFrame.setVisible(true);
-        //primaryFrame.setResizable(false);
+        primaryFrame.setResizable(false);
         primaryFrame.add(primaryPanel);
         primaryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         return primaryFrame;
@@ -102,8 +102,8 @@ public class EmotionsGUI {
 
     public JPanel setUpPrimaryPanel() {
         primaryPanel = new JPanel();
-        primaryPanel.setLayout(new GridLayout(2, 0, -30,-100));
-        primaryPanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
+        primaryPanel.setLayout(new GridLayout(2, 0, -200,-100));
+        primaryPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
         primaryPanel.setVisible(true);
 
         JLabel primaryTitle = new JLabel();
@@ -111,8 +111,8 @@ public class EmotionsGUI {
         primaryTitle.setVerticalAlignment(JLabel.TOP);
         primaryTitle.setFont(new Font("Monospaced Bold",Font.BOLD, 29));
         primaryTitle.setHorizontalAlignment(JLabel.CENTER);
-        primaryPanel.add(primaryTitle);
 
+        primaryPanel.add(primaryTitle);
         primaryPanel.add(setUpButtonsInPrimaryPanel());
 
 
@@ -124,7 +124,7 @@ public class EmotionsGUI {
 
     public JPanel setUpButtonsInPrimaryPanel() {
         JPanel buttonsPanel = new JPanel();
-        buttonsPanel.setLayout(new GridLayout(2, 3));
+        buttonsPanel.setLayout(new GridLayout(2, 3, 20, 0));
         buttonsPanel.setVisible(true);
 
         buttonsPanel.add(designButtonLabel(happy, "Happy"));
@@ -140,11 +140,17 @@ public class EmotionsGUI {
 
 
     public JLabel designButtonLabel(JButton button, String buttonName) {
+        JLabel text = new JLabel();
+        text.setText(buttonName);
+        text.setFont(new Font("Monospaced Bold",Font.BOLD, 18));
+        text.setHorizontalAlignment(JLabel.CENTER);
+
         JLabel buttonLabel = new JLabel();
-        button = designButton(button);
+        buttonLabel.setLayout(new GridLayout(2,3,0,-30));
+        button = designButton(button, buttonName);
 
         buttonLabel.add(button);
-        buttonLabel.setText(buttonName);
+        buttonLabel.add(text);
         buttonLabel.setVisible(true);
         
     
@@ -152,13 +158,12 @@ public class EmotionsGUI {
     }
 
 
-    public JButton designButton(JButton button) {
-        Icon icon = new ImageIcon("images/fear.PNG");
+    public JButton designButton(JButton button, String buttonName) {
+        Icon icon = new ImageIcon("images/" + buttonName + ".PNG");
         button = new JButton(icon);
 
         button.setVisible(true);
-        button.setFocusable(false); 
-        button.setSize(100,100);
+        button.setSize(100, 400);
         return button;
 
     }
