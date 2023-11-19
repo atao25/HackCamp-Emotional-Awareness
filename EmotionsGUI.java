@@ -39,9 +39,10 @@ public class EmotionsGUI {
     public EmotionsGUI() {
         profileFrame = new JFrame();
         profileDimension = new Dimension(600, 600);
-        profileFrame.setTitle("Emotional Awareness");
+       //profileFrame.setTitle("Emotional Awareness");
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
+        profileFrame.setVisible(true);
 
 
         profileFrame.add(profilePanel);
@@ -50,6 +51,9 @@ public class EmotionsGUI {
 
     public JPanel setUpProfilePanel() {
         profilePanel = new JPanel();
+        profilePanel.setLayout(new GridLayout(0, 1, 0, 12));
+        profilePanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
+
 
 
         return profilePanel;
