@@ -183,7 +183,7 @@ public void makeProfileDetails() {
         buttonsPanel.add(designButtonLabel(anger, "Anger"));
         buttonsPanel.add(designButtonLabel(fear, "Fear"));
         buttonsPanel.add(designButtonLabel(disgust, "Disgust"));
-        buttonsPanel.add(designButtonLabel(surprise, "Suprise"));
+        buttonsPanel.add(designButtonLabel(surprise, "Surprise"));
 
         return buttonsPanel;
 
