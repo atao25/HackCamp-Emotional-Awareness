@@ -184,7 +184,7 @@ public class EmotionsGUI {
         buttonsPanel.add(designButtonLabel(anger, "Anger"));
         buttonsPanel.add(designButtonLabel(fear, "Fear"));
         buttonsPanel.add(designButtonLabel(disgust, "Disgust"));
-        buttonsPanel.add(designButtonLabel(surprise, "Suprise"));
+        buttonsPanel.add(designButtonLabel(surprise, "Surprise"));
 
         return buttonsPanel;
 
@@ -316,20 +316,7 @@ public class EmotionsGUI {
         return angerFrame;
     }
 
-    // public JFrame angerFrame() {
-    //     JFrame angerFrame = new JFrame();
-    //     angerFrame.setSize(1000,600);
-    //     angerFrame.setTitle("More Happy Emotions!");
 
-    //     JPanel angerPanel = new JPanel();
-    //     angerPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
-
-    //     angerFrame.add(angerPanel);
-
-    //     angerFrame.setVisible(true);
-
-    //     return angerFrame;
-    // }
 
     public JFrame fearFrame() {
         JFrame fearFrame = new JFrame();
@@ -375,16 +362,6 @@ public class EmotionsGUI {
         return button;
 
     }
-
-    // @Override
-    // public void actionPerformed(ActionEvent e) {
-    //     try {
-
-    //     }
-
-    //     catch (FileNotFoundException)
-    // }
-
 
 
 
