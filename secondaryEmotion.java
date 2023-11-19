@@ -4,9 +4,11 @@ import java.util.Map;
 public class SecondaryEmotion {
 
     private Map<String, String> emotions;
+    private String emotionName;
 
-    public SecondaryEmotion() {
+    public SecondaryEmotion(String name) {
         emotions = new HashMap<>();
+        this.emotionName = name;
     }
 
     public void addSecondary(String name, String message) {
@@ -17,5 +19,9 @@ public class SecondaryEmotion {
     public String getMessage(String name) {
         return emotions.get(name);
 
+    }
+
+    public String getName() {
+        return this.emotionName;
     }
 }
