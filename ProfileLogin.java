@@ -3,7 +3,7 @@ public class ProfileLogin {
   private String userName;
   private String password;
 
-  public class ProfileLogIn() {
+  public ProfileLogin() {
     this.userName = "";
     this.password = "";
   }
