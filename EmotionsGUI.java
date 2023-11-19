@@ -152,7 +152,9 @@ public class EmotionsGUI {
 
 
     public JButton designButton(JButton button) {
-        button = new JButton();
+        ImageIcon fear = new ImageIcon("fear.PNG");
+
+        button = new JButton(fear);
         button.setVisible(true);
         button.setFocusable(false); 
         button.setSize(20, 30);
