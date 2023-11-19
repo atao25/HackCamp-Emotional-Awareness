@@ -58,7 +58,6 @@ public class EmotionsGUI {
         profileFrame.setTitle("Emotional Awareness App");
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
-        profileFrame.setResizable(false);
         profileFrame.add(profilePanel);
         makeProfileDetails();
 
@@ -66,6 +65,7 @@ public class EmotionsGUI {
 
         profileFrame.setVisible(true);
 
+        profileFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 
@@ -145,7 +145,6 @@ public class EmotionsGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 loadPrimaryFrame();
-                JOptionPane.showMessageDialog(anger, e);
             }
         });
         return submit;
@@ -202,22 +201,169 @@ public class EmotionsGUI {
         buttonLabel.setLayout(new GridLayout(2,3,0,-30));
         button = designButton(button, buttonName);
 
-        // button.addActionListener(new AbstractAction() {
-        //     @Override
-        //     public void actionPerformed(ActionEvent e) {
-        //         happyFrame();
-        //     }
-        // });
+        if (buttonName.equals("Happy")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                happyFrame();
+            }
+        });
 
-
+        } else if (buttonName.equals("Sad")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                sadFrame();
+            }
+        });
+        } else if (buttonName.equals("Fear")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fearFrame();
+            }
+        });
+        } else if (buttonName.equals("Disgust")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                disgustFrame();
+            }
+        });
+        } else if (buttonName.equals("Anger")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                angerFrame();
+            }
+        });
+        } else {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                surpriseFrame();
+            }
+        });
+        }
+       
         buttonLabel.add(button);
         buttonLabel.add(text);
         buttonLabel.setVisible(true);
         
     
         return buttonLabel;
+
+        
     }
 
+    public JFrame happyFrame() {
+        JFrame happyFrame = new JFrame();
+        happyFrame.setSize(1000,600);
+        happyFrame.setTitle("More Happy Emotions!");
+
+        JPanel happyPanel = new JPanel();
+        happyPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
+
+        happyFrame.add(happyPanel);
+
+        happyFrame.setVisible(true);
+
+        return happyFrame;
+    }
+
+      public JFrame sadFrame() {
+        JFrame sadFrame = new JFrame();
+        sadFrame.setSize(1000,600);
+        sadFrame.setTitle("More Sad Emotions :(");
+
+        JPanel sadPanel = new JPanel();
+        sadPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
+
+        sadFrame.add(sadPanel);
+
+        sadFrame.setVisible(true);
+
+        return sadFrame;
+    }
+
+     public JFrame disgustFrame() {
+        JFrame disgustFrame = new JFrame();
+        disgustFrame.setSize(1000,600);
+        disgustFrame.setTitle("More disgust Emotions!");
+
+        JPanel disgustPanel = new JPanel();
+        disgustPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
+
+        disgustFrame.add(disgustPanel);
+
+        disgustFrame.setVisible(true);
+
+        return disgustFrame;
+    }
+
+    public JFrame angerFrame() {
+        JFrame angerFrame = new JFrame();
+        angerFrame.setSize(1000,600);
+        angerFrame.setTitle("More Happy Emotions!");
+
+        JPanel angerPanel = new JPanel();
+        angerPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
+
+        angerFrame.add(angerPanel);
+
+        angerFrame.setVisible(true);
+
+        return angerFrame;
+    }
+
+    // public JFrame angerFrame() {
+    //     JFrame angerFrame = new JFrame();
+    //     angerFrame.setSize(1000,600);
+    //     angerFrame.setTitle("More Happy Emotions!");
+
+    //     JPanel angerPanel = new JPanel();
+    //     angerPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
+
+    //     angerFrame.add(angerPanel);
+
+    //     angerFrame.setVisible(true);
+
+    //     return angerFrame;
+    // }
+
+    public JFrame fearFrame() {
+        JFrame fearFrame = new JFrame();
+        fearFrame.setSize(1000,600);
+        fearFrame.setTitle("More Happy Emotions!");
+
+        JPanel fearPanel = new JPanel();
+        fearPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
+
+        fearFrame.add(fearPanel);
+
+        fearFrame.setVisible(true);
+
+        return fearFrame;
+    }
+
+     public JFrame surpriseFrame() {
+        JFrame surpriseFrame = new JFrame();
+        surpriseFrame.setSize(1000,600);
+        surpriseFrame.setTitle("More Happy Emotions!");
+
+        JPanel surprisePanel = new JPanel();
+        surprisePanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
+
+        surpriseFrame.add(surprisePanel);
+
+        surpriseFrame.setVisible(true);
+
+        return surpriseFrame;
+    }
+
+
+
+    
 
 
     public JButton designButton(JButton button, String buttonName) {
@@ -229,6 +375,15 @@ public class EmotionsGUI {
         return button;
 
     }
+
+    // @Override
+    // public void actionPerformed(ActionEvent e) {
+    //     try {
+
+    //     }
+
+    //     catch (FileNotFoundException)
+    // }
 
 
 
@@ -251,3 +406,68 @@ public class EmotionsGUI {
 //                 wishListModel.remove(selectedMeal);
 //                 mealWishList.removeMealByIndex(selectedMeal);
 //         }
+
+
+
+
+
+
+
+//  if (buttonName.equals("Happy")) {
+//             button.addActionListener(new AbstractAction() {
+//                 @Override
+//                 public void actionPerformed(ActionEvent e) {
+//                     happyFrame();
+//                 }
+//         });
+//         }
+
+//         if (buttonName.equals("Sad")) {
+//             button.addActionListener(new AbstractAction() {
+//                 @Override
+//                 public void actionPerformed(ActionEvent e) {
+//                     sadFrame();
+//                 }
+//         });
+//         }
+
+//          if (buttonName.equals("Disgust")) {
+//             button.addActionListener(new AbstractAction() {
+//                 @Override
+//                 public void actionPerformed(ActionEvent e) {
+//                     disgustFrame();
+//                 }
+//         });
+//         }
+
+//          if (buttonName.equals("Anger")) {
+//             button.addActionListener(new AbstractAction() {
+//                 @Override
+//                 public void actionPerformed(ActionEvent e) {
+//                     angerFrame();
+//                 }
+//         });
+//         }
+
+//          if (buttonName.equals("Fear")) {
+//             button.addActionListener(new AbstractAction() {
+//                 @Override
+//                 public void actionPerformed(ActionEvent e) {
+//                     fearFrame();
+//                 }
+//         });
+//         }
+
+//         else {
+//             (buttonName.equals("Surprise")) {
+//             button.addActionListener(new AbstractAction() {
+//                 @Override
+//                 public void actionPerformed(ActionEvent e) {
+//                     surpriseFrame();
+//                 }
+//         });
+//         }
+        
+
+//         }
+//     }
