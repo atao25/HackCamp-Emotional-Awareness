@@ -2,6 +2,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
@@ -15,7 +16,14 @@ public class EmotionsGUI {
     private JPanel profilePanel;
     private JLabel title;
     private JLabel message;
+    
+    private JLabel userName;
+    private JLabel password;
 
+    private JTextField user;
+    private JPasswordField pw;
+
+    private JButton submit;
 
 
     // first layer emoji frame
@@ -57,14 +65,15 @@ public class EmotionsGUI {
 
         profileFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-       loadPrimaryFrame();
+        //loadPrimaryFrame();
 
     }
 
     public JPanel setUpProfilePanel() {
         profilePanel = new JPanel();
-        profilePanel.setLayout(new GridLayout(0, 1, 0, 1));
+       // profilePanel.setLayout(new GridLayout(0, 1, 0, 1));
         profilePanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
+        profilePanel.setLayout(new BoxLayout(profilePanel, BoxLayout.Y_AXIS));
 
 
 
@@ -85,17 +94,62 @@ public class EmotionsGUI {
     }
 
 
-    public void makeProfileDetails() {
+public void makeProfileDetails() {
         title = new JLabel("EMOTIONAL AWARENESS");
         title.setFont(new Font(Font.SERIF, Font.BOLD, 25));
-        title.setVerticalAlignment(JLabel.TOP);
-        title.setHorizontalAlignment(JLabel.CENTER);
+        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         message = new JLabel("The ability to understand feelings ...");
-        message.setHorizontalAlignment(JLabel.CENTER);
+        message.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        userName = new JLabel("Enter Username: ");
+        userName.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        password = new JLabel("Enter Password: ");
+        password.setAlignmentX(Component.RIGHT_ALIGNMENT);
+
+        user = new JTextField(15);
+        user.setAlignmentX(Component.LEFT_ALIGNMENT);
+        user.setMaximumSize(new Dimension(100,30));
+        pw = new JPasswordField(15);
+        pw.setAlignmentX(Component.LEFT_ALIGNMENT);
+        pw.setMaximumSize(new Dimension(100,30));
+
+        submit = new JButton("Submit");
 
 
         profilePanel.add(title);
         profilePanel.add(message);
+
+
+        JPanel userPanel = new JPanel();
+        userPanel.setLayout(new BoxLayout(userPanel, BoxLayout.X_AXIS));
+        userPanel.add(userName);
+        userPanel.add(Box.createRigidArea(new Dimension(10,0)));
+        userPanel.add(user);
+        profilePanel.add(userPanel);
+
+        JPanel passwordPanel = new JPanel();
+        passwordPanel.setLayout(new BoxLayout(passwordPanel, BoxLayout.X_AXIS));
+        passwordPanel.add(password);
+        passwordPanel.add(Box.createRigidArea(new Dimension(10,0)));
+        passwordPanel.add(pw);
+        profilePanel.add(passwordPanel);
+
+        profilePanel.add(createSubmitButton());
+        
+
+    }
+
+    public JButton createSubmitButton() {
+        submit = new JButton("Submit");
+        submit.setFocusable(false);
+        submit.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadPrimaryFrame();
+            }
+        });
+        return submit;
     }
 
     
