@@ -17,7 +17,7 @@ public class ProfileLogin {
   }
 
   public String getUserName() {
-    return password;
+    return userName;
   }
 
   public String getPassword() {
