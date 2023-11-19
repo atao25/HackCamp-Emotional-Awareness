@@ -141,7 +141,6 @@ public class EmotionsGUI {
 
     public JLabel designButtonLabel(JButton button, String buttonName) {
         JLabel buttonLabel = new JLabel();
-        //buttonLabel.setLayout(new GridLayout(0,2));
         button = designButton(button);
 
         buttonLabel.add(button);
@@ -159,7 +158,7 @@ public class EmotionsGUI {
 
         button.setVisible(true);
         button.setFocusable(false); 
-        button.setSize(200,200);
+        button.setSize(100,100);
         return button;
 
     }
