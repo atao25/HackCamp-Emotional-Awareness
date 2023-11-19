@@ -37,13 +37,13 @@ public class EmotionsGUI {
     private JButton fear;
     private JButton anger;
     private JButton surprise;
-    private JButton back1;
+   // private JButton back1;
 
 
 
     // second layer emoji frame
     private JFrame secondary;
-    private JButton back2;
+   // private JButton back2;
 
 
 
@@ -64,8 +64,6 @@ public class EmotionsGUI {
 
         profileFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //loadPrimaryFrame();
-
         profileFrame.setVisible(true);
 
 
@@ -73,7 +71,6 @@ public class EmotionsGUI {
 
     public JPanel setUpProfilePanel() {
         profilePanel = new JPanel();
-       // profilePanel.setLayout(new GridLayout(0, 1, 0, 1));
         profilePanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
         profilePanel.setLayout(new BoxLayout(profilePanel, BoxLayout.Y_AXIS));
 
@@ -96,7 +93,7 @@ public class EmotionsGUI {
     }
 
 
-public void makeProfileDetails() {
+    public void makeProfileDetails() {
         title = new JLabel("EMOTIONAL AWARENESS");
         title.setFont(new Font(Font.SERIF, Font.BOLD, 25));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -116,7 +113,6 @@ public void makeProfileDetails() {
         pw.setAlignmentX(Component.LEFT_ALIGNMENT);
         pw.setMaximumSize(new Dimension(100,30));
 
-        submit = new JButton("Submit");
 
 
         profilePanel.add(title);
@@ -149,6 +145,7 @@ public void makeProfileDetails() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 loadPrimaryFrame();
+                JOptionPane.showMessageDialog(anger, e);
             }
         });
         return submit;
@@ -205,6 +202,14 @@ public void makeProfileDetails() {
         buttonLabel.setLayout(new GridLayout(2,3,0,-30));
         button = designButton(button, buttonName);
 
+        // button.addActionListener(new AbstractAction() {
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //         happyFrame();
+        //     }
+        // });
+
+
         buttonLabel.add(button);
         buttonLabel.add(text);
         buttonLabel.setVisible(true);
@@ -212,6 +217,7 @@ public void makeProfileDetails() {
     
         return buttonLabel;
     }
+
 
 
     public JButton designButton(JButton button, String buttonName) {
@@ -226,4 +232,22 @@ public void makeProfileDetails() {
 
 
 
+
+
 } 
+
+
+//  private void deleteDialog() {
+//         int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this meal?",
+//                 "Confirm Delete", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+//         switch (result) {
+//             case JOptionPane.NO_OPTION:
+//                 // don't do anything, close the dialog
+//                 break;
+
+//             case JOptionPane.YES_OPTION:
+//                 int selectedMeal = wishList.getSelectedIndex();
+//                 wishListModel.remove(selectedMeal);
+//                 mealWishList.removeMealByIndex(selectedMeal);
+//         }
