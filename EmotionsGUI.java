@@ -14,12 +14,6 @@ public class EmotionsGUI {
     private JPanel profilePanel;
     private JLabel title;
     private JLabel message;
-    private JTextField user;
-    private JPasswordField pw;
-    private JButton login;
-
-    private JPanel userNamePanel;
-    private JPanel passwordPanel;
 
 
 
@@ -56,13 +50,13 @@ public class EmotionsGUI {
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
         profileFrame.setVisible(true);
-       // profileFrame.setResizable(false);
+        profileFrame.setResizable(false);
         profileFrame.add(profilePanel);
         makeProfileDetails();
 
         profileFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        loadPrimaryFrame();
+       loadPrimaryFrame();
 
     }
 
@@ -72,6 +66,7 @@ public class EmotionsGUI {
         primaryFrame.setSize(profileDimension.width, profileDimension.height);
         primaryPanel = setUpPrimaryPanel();
         primaryFrame.setVisible(true);
+        //primaryFrame.setResizable(false);
         primaryFrame.add(primaryPanel);
         primaryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         return primaryFrame;
@@ -79,64 +74,35 @@ public class EmotionsGUI {
 
     public JPanel setUpProfilePanel() {
         profilePanel = new JPanel();
-        profilePanel.setLayout(new BoxLayout(profilePanel, BoxLayout.Y_AXIS));
-        profilePanel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
+        profilePanel.setLayout(new GridLayout(0, 1, 0, 1));
+        profilePanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
 
 
 
         return profilePanel;
-
     }
+
+
     public void makeProfileDetails() {
         title = new JLabel("EMOTIONAL AWARENESS");
         title.setFont(new Font(Font.SERIF, Font.BOLD, 25));
-        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        title.setVerticalAlignment(JLabel.TOP);
+        title.setHorizontalAlignment(JLabel.CENTER);
         message = new JLabel("The ability to understand feelings ...");
-        message.setAlignmentX(Component.CENTER_ALIGNMENT);
+        message.setHorizontalAlignment(JLabel.CENTER);
 
-
-
-        JLabel userName = new JLabel("Enter Username");
-        userName.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        JLabel password = new JLabel("Enter Password");
-        password.setAlignmentX(Component.RIGHT_ALIGNMENT);
-
-        user = new JTextField();
-       // user.setBorder(BorderFactory.createEmptyBorder(200, 100, 200, 100));
-       // user.setPreferredSize(new Dimension(30,30));
-       // user.setAlignmentX(Component.LEFT_ALIGNMENT);
-        pw = new JPasswordField();
-       // pw.setBorder(BorderFactory.createEmptyBorder(200, 100, 200, 100));
-
-       // pw.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         profilePanel.add(title);
         profilePanel.add(message);
-        profilePanel.add(user);
-        profilePanel.add(pw);
-        profilePanel.add(userName);
-        profilePanel.add(password);
-        
-
     }
 
     
 
-
-
-
-
-
-
-
-
-
-
-
     public JPanel setUpPrimaryPanel() {
         primaryPanel = new JPanel();
-        primaryPanel.setLayout(new GridLayout(2, 0, 0, 12));
+        primaryPanel.setLayout(new GridLayout(2, 0, -30,-100));
         primaryPanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
+        primaryPanel.setVisible(true);
 
         JLabel primaryTitle = new JLabel();
         primaryTitle.setText("I am feeling...");
@@ -145,13 +111,56 @@ public class EmotionsGUI {
         primaryTitle.setHorizontalAlignment(JLabel.CENTER);
         primaryPanel.add(primaryTitle);
 
+        primaryPanel.add(setUpButtonsInPrimaryPanel());
+
+
+
         return primaryPanel;
-        
-    
-   
-
-
-
 
     }
+
+
+    public JPanel setUpButtonsInPrimaryPanel() {
+        JPanel buttonsPanel = new JPanel();
+        buttonsPanel.setLayout(new GridLayout(2, 3));
+        buttonsPanel.setVisible(true);
+
+        buttonsPanel.add(designButtonLabel(happy, "Happy"));
+        buttonsPanel.add(designButtonLabel(sad, "Sad"));
+        buttonsPanel.add(designButtonLabel(anger, "Anger"));
+        buttonsPanel.add(designButtonLabel(fear, "Fear"));
+        buttonsPanel.add(designButtonLabel(disgust, "Disgust"));
+        buttonsPanel.add(designButtonLabel(surprise, "Suprise"));
+
+        return buttonsPanel;
+
+    }
+
+
+    public JLabel designButtonLabel(JButton button, String buttonName) {
+        JLabel buttonLabel = new JLabel();
+        buttonLabel.setLayout(new GridLayout(0,2));
+
+        button = designButton(button);
+
+        buttonLabel.add(button);
+        buttonLabel.setText(buttonName);
+        buttonLabel.setVisible(true);
+        
+    
+        return buttonLabel;
+    }
+
+
+    public JButton designButton(JButton button) {
+        button = new JButton();
+        button.setVisible(true);
+        button.setFocusable(false); 
+        button.setSize(20, 30);
+        return button;
+
+    }
+
+
+
 } 
