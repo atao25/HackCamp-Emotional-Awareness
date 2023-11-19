@@ -16,7 +16,10 @@ public class EmotionsGUI {
 
 
     // first layer emoji frame
-    private JFrame primary;
+    private JFrame primaryFrame;
+    private JPanel primaryPanel;
+    private Dimension primaryDimension;
+
     private JButton happy;
     private JButton sad;
     private JButton disgust;
@@ -33,7 +36,7 @@ public class EmotionsGUI {
 
     public static void main (String[] args) {
         new EmotionsGUI();
-        System.out.println("hi");
+
     }
 
     public EmotionsGUI() {
@@ -43,9 +46,16 @@ public class EmotionsGUI {
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
         profileFrame.setVisible(true);
-
-
         profileFrame.add(profilePanel);
+
+        primaryFrame = new JFrame();
+        //primaryFrame = setTitle("Emotional Awareness: primary emotions");
+        primaryFrame.setSize(profileDimension.width, profileDimension.height);
+        primaryPanel = setUpPrimaryPanel();
+        primaryFrame.setVisible(true);
+        primaryFrame.add(primaryPanel);
+        primaryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
     }
 
@@ -57,6 +67,22 @@ public class EmotionsGUI {
 
 
         return profilePanel;
+    }
+
+    public JPanel setUpPrimaryPanel() {
+        primaryPanel = new JPanel();
+        primaryPanel.setLayout(new GridLayout(2, 0, 0, 12));
+        primaryPanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
+
+        JLabel title = new JLabel();
+        title.setText("I am feeling...");
+        title.setVerticalAlignment(JLabel.TOP);
+        title.setFont(new Font("Monospaced Bold",Font.BOLD, 29));
+        title.setHorizontalAlignment(JLabel.CENTER);
+        primaryPanel.add(title);
+
+        return primaryPanel;
+        
     }
 
    
