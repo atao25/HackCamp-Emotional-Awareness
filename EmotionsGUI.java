@@ -57,6 +57,11 @@ public class EmotionsGUI {
         profileFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        // profileFrame.setResizable(false);
 
+       loadPrimaryFrame();
+
+    }
+
+    public JFrame loadPrimaryFrame() { 
         primaryFrame = new JFrame();
         //primaryFrame = setTitle("Emotional Awareness: primary emotions");
         primaryFrame.setSize(profileDimension.width, profileDimension.height);
@@ -64,8 +69,7 @@ public class EmotionsGUI {
         primaryFrame.setVisible(true);
         primaryFrame.add(primaryPanel);
         primaryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
+        return primaryFrame;
     }
 
     public JPanel setUpProfilePanel() {
@@ -100,12 +104,12 @@ public class EmotionsGUI {
         primaryPanel.setLayout(new GridLayout(2, 0, 0, 12));
         primaryPanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
 
-        JLabel title = new JLabel();
-        title.setText("I am feeling...");
-        title.setVerticalAlignment(JLabel.TOP);
-        title.setFont(new Font("Monospaced Bold",Font.BOLD, 29));
-        title.setHorizontalAlignment(JLabel.CENTER);
-        primaryPanel.add(title);
+        JLabel primaryTitle = new JLabel();
+        primaryTitle.setText("I am feeling...");
+        primaryTitle.setVerticalAlignment(JLabel.TOP);
+        primaryTitle.setFont(new Font("Monospaced Bold",Font.BOLD, 29));
+        primaryTitle.setHorizontalAlignment(JLabel.CENTER);
+        primaryPanel.add(primaryTitle);
 
         return primaryPanel;
         
