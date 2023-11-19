@@ -54,11 +54,10 @@ public class EmotionsGUI {
 
     public EmotionsGUI() {
         profileFrame = new JFrame();
-        profileDimension = new Dimension(600, 600);
+        profileDimension = new Dimension(1000, 600);
         profileFrame.setTitle("Emotional Awareness App");
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
-        profileFrame.setVisible(true);
         profileFrame.setResizable(false);
         profileFrame.add(profilePanel);
         makeProfileDetails();
@@ -66,6 +65,9 @@ public class EmotionsGUI {
         profileFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //loadPrimaryFrame();
+
+        profileFrame.setVisible(true);
+
 
     }
 
