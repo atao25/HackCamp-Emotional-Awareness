@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -60,6 +61,17 @@ public class EmotionsGUI {
 
     }
 
+    public JPanel setUpProfilePanel() {
+        profilePanel = new JPanel();
+        profilePanel.setLayout(new GridLayout(0, 1, 0, 1));
+        profilePanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
+
+
+
+        return profilePanel;
+    }
+
+
     public JFrame loadPrimaryFrame() { 
         primaryFrame = new JFrame();
         //primaryFrame = setTitle("Emotional Awareness: primary emotions");
@@ -70,16 +82,6 @@ public class EmotionsGUI {
         primaryFrame.add(primaryPanel);
         primaryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         return primaryFrame;
-    }
-
-    public JPanel setUpProfilePanel() {
-        profilePanel = new JPanel();
-        profilePanel.setLayout(new GridLayout(0, 1, 0, 1));
-        profilePanel.setBorder(BorderFactory.createEmptyBorder(50, 120, 50, 120));
-
-
-
-        return profilePanel;
     }
 
 
@@ -152,12 +154,12 @@ public class EmotionsGUI {
 
 
     public JButton designButton(JButton button) {
-        ImageIcon fear = new ImageIcon("fear.PNG");
+        Icon icon = new ImageIcon("images/fear.PNG");
+        button = new JButton(icon);
 
-        button = new JButton(fear);
         button.setVisible(true);
         button.setFocusable(false); 
-        button.setSize(20, 30);
+        button.setSize(200,200);
         return button;
 
     }
