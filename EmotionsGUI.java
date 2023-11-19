@@ -50,9 +50,9 @@ public class EmotionsGUI {
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
         profileFrame.setVisible(true);
+        profileFrame.setResizable(false);
         profileFrame.add(profilePanel);
         makeProfileDetails();
-        profileFrame.pack();
 
         profileFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        // profileFrame.setResizable(false);
