@@ -76,9 +76,25 @@ public class EmotionsGUI {
 
 
         return profilePanel;
+
+    }
+    public void makeProfileDetails() {
+        title = new JLabel("EMOTIONAL AWARENESS");
+        title.setFont(new Font(Font.SERIF, Font.BOLD, 25));
+        title.setVerticalAlignment(JLabel.TOP);
+        title.setHorizontalAlignment(JLabel.CENTER);
+        message = new JLabel("The ability to understand feelings ...");
+        message.setHorizontalAlignment(JLabel.CENTER);
+
+
+
+
+        profilePanel.add(title);
+        profilePanel.add(message);
     }
 
-<<<<<<< HEAD
+    
+
     public JPanel setUpPrimaryPanel() {
         primaryPanel = new JPanel();
         primaryPanel.setLayout(new GridLayout(2, 0, 0, 12));
@@ -93,26 +109,11 @@ public class EmotionsGUI {
 
         return primaryPanel;
         
-=======
-    public void makeProfileDetails() {
-        title = new JLabel("EMOTIONAL AWARENESS");
-        title.setFont(new Font(Font.SERIF, Font.BOLD, 25));
-        title.setVerticalAlignment(JLabel.TOP);
-        title.setHorizontalAlignment(JLabel.CENTER);
-        message = new JLabel("The ability to understand feelings ...");
-        message.setHorizontalAlignment(JLabel.CENTER);
-
-
-
-
-        profilePanel.add(title);
-        profilePanel.add(message);
->>>>>>> f93841a8ee04206502a0d39d3876ceb247c7945d
-    }
-
+    
    
 
 
 
 
+    }
 } 
