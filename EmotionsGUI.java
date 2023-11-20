@@ -327,25 +327,25 @@ public class EmotionsGUI {
     public void confusedDialog() {
         JFrame confusedDialogFrame = new JFrame("Message!");
         confusedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(confusedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(confusedDialogFrame, "Take a moment and be present.", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void amazedDialog() {
         JFrame amazedDialogFrame = new JFrame("Message!");
         amazedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(amazedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(amazedDialogFrame, "Take a second, and keep on kicking on.", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void excitedDialog() {
         JFrame excitedDialogFrame = new JFrame("Message!");
         excitedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(excitedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(excitedDialogFrame, "WOW! I am excited for you!", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void disapprovalDialog() {
         JFrame disapprovalDialogFrame = new JFrame("Message!");
         disapprovalDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(disapprovalDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(disapprovalDialogFrame, "That must have been tough, keep your head high.", null, JOptionPane.INFORMATION_MESSAGE);
 
     }
 
