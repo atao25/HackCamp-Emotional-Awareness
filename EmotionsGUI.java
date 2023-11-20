@@ -53,6 +53,24 @@ public class EmotionsGUI {
     private JButton awful;
     private JButton avoidance;
 
+    private JPanel moreAngerPanel;
+    private JButton critical;
+    private JButton distant;
+    private JButton frustrated;
+    private JButton aggressive;
+    private JButton mad;
+    private JButton hateful;
+    private JButton threatened;
+    private JButton hurt;
+
+    private JPanel moreSadPanel;
+    private JButton guilty;
+    private JButton abandoned;
+    private JButton despair;
+    private JButton depressed;
+    private JButton lonely;
+    private JButton bored;
+
 
     public static void main (String[] args) {
         new EmotionsGUI();
@@ -301,6 +319,110 @@ public class EmotionsGUI {
             }
         });  
         }
+        else if (buttonName.equals("Distant")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                distantDialog();
+            }
+        });
+        }  
+        else if (buttonName.equals("Frustrated")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frustratedDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Aggressive")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                aggressiveDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Mad")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                madDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Hateful")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                hatefulDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Threatened")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                threatenedDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Hurt")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                hurtDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Guilty")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                guiltyDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Abandoned")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                abandonedDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Despair")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                despairDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Depressed")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                depressedDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Lonely")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lonelyDialog();
+            }
+        });
+        } 
+        else if (buttonName.equals("Bored")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                boredDialog();
+            }
+        });
+        } 
         else {
             button.addActionListener(new AbstractAction() {
             @Override
@@ -352,42 +474,129 @@ public class EmotionsGUI {
     public void disappointedDialog() {
         JFrame disappointedDialogFrame = new JFrame("Message!");
         disappointedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(disappointedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(disappointedDialogFrame, "I am sorry to hear that, it will get better soon, I promise!", null, JOptionPane.INFORMATION_MESSAGE);
 
     }
 
     public void awfulDialog() {
         JFrame awfulDialogFrame = new JFrame("Message!");
         awfulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(awfulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(awfulDialogFrame, "Take a moment to reflect and grow from this experience.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void criticalDialog() {
+        JFrame criticalDialogFrame = new JFrame("Message!");
+        criticalDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(criticalDialogFrame, "Relax, take a breather. I am proud of you!", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+
+    public void distantDialog() {
+        JFrame distantDialogFrame = new JFrame("Message!");
+        distantDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(distantDialogFrame, "Practice some meditation.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+
+    public void frustratedDialog() {
+        JFrame frustratedDialogFrame = new JFrame("Message!");
+        frustratedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(frustratedDialogFrame, "Go for a walk and come back to your task.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+
+    public void aggressiveDialog() {
+        JFrame aggressiveDialogFrame = new JFrame("Message!");
+        aggressiveDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(aggressiveDialogFrame, "Stop and take a moment to reflect.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+
+    public void madDialog() {
+        JFrame madDialogFrame = new JFrame("Message!");
+        madDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(madDialogFrame, "Stop and reflect.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void hatefulDialog() {
+        JFrame hatefulDialogFrame = new JFrame("Message!");
+        hatefulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(hatefulDialogFrame, "Step away from the situation and come back when you feel ready.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+
+    public void threatenedDialog() {
+        JFrame threatenedDialogFrame = new JFrame("Message!");
+        threatenedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(threatenedDialogFrame, "Reflect on the situation and assess different perspectives.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+
+    public void hurtDialog() {
+        JFrame hurtDialogFrame = new JFrame("Message!");
+        hurtDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(hurtDialogFrame, "Step away and come back after taking a moment to yourself.", null, JOptionPane.INFORMATION_MESSAGE);
 
     }
 
     public void avoidanceDialog() {
         JFrame avoidanceDialogFrame = new JFrame("Message!");
         avoidanceDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(avoidanceDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(avoidanceDialogFrame, "face your fears with your head held high!", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void guiltyDialog() {
+        JFrame guiltyDialogFrame = new JFrame("Message!");
+        guiltyDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(guiltyDialogFrame, "Reach out to those you may have negatively affected.", null, JOptionPane.INFORMATION_MESSAGE);
 
     }
 
 
+    public void abandonedDialog() {
+        JFrame abandonedDialogFrame = new JFrame("Message!");
+        abandonedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(abandonedDialogFrame, "I'm sorry to hear that, reflect on the situation and understand sometimes things are out of our control.", null, JOptionPane.INFORMATION_MESSAGE);
 
-    // private void deleteDialog() {
-    //     int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this meal?",
-    //             "Confirm Delete", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+    }
 
-    //     switch (result) {
-    //         case JOptionPane.NO_OPTION:
-    //             // don't do anything, close the dialog
-    //             break;
+    public void despairDialog() {
+        JFrame despairDialogFrame = new JFrame("Message!");
+        despairDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(despairDialogFrame, "Reach out to someone you trust.", null, JOptionPane.INFORMATION_MESSAGE);
 
-    //         case JOptionPane.YES_OPTION:
-    //             int selectedMeal = wishList.getSelectedIndex();
-    //             wishListModel.remove(selectedMeal);
-    //             mealWishList.removeMealByIndex(selectedMeal);
-    //     }
+    }
 
-    // }
+    public void depressedDialog() {
+        JFrame depressedDialogFrame = new JFrame("Message!");
+        depressedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(depressedDialogFrame, "Reach out to someone you trust as soon as you can.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void lonelyDialog() {
+        JFrame lonelyDialogFrame = new JFrame("Message!");
+        lonelyDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(lonelyDialogFrame, "Reach out to someone you trust as soon as you can.", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void boredDialog() {
+        JFrame boredDialogFrame = new JFrame("Message!");
+        boredDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(boredDialogFrame, "Start a new hobby!", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+    
 
 
 
@@ -408,21 +617,55 @@ public class EmotionsGUI {
 
 
 
-
-      public JFrame sadFrame() {
+    public JFrame sadFrame() {
         JFrame sadFrame = new JFrame();
         sadFrame.setSize(1000,600);
         sadFrame.setTitle("More Sad Emotions :(");
 
-        JPanel sadPanel = new JPanel();
-        sadPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
-
-        sadFrame.add(sadPanel);
-
+        setUpSadPanel();
+        sadFrame.add(moreSadPanel);
+        sadFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         sadFrame.setVisible(true);
 
         return sadFrame;
     }
+
+    public JPanel setUpSadPanel() {
+        moreSadPanel = new JPanel();
+        moreSadPanel.setLayout(new GridLayout(2,0,-200,-100));
+        moreSadPanel.setBorder(BorderFactory.createEmptyBorder(100,50,50,50));
+        moreSadPanel.setVisible(true);
+
+        JLabel sadTitle = new JLabel("Getting a little more specific, I am feeling...");
+        sadTitle.setVerticalAlignment(JLabel.TOP);
+        sadTitle.setHorizontalAlignment(JLabel.CENTER);
+        sadTitle.setFont(new Font("Monospaced Bold", Font.BOLD, 29));
+
+        moreSadPanel.add(sadTitle);
+        moreSadPanel.add(setUpButtonsInSadPanel());
+
+        return moreSadPanel;
+    }
+
+    public JPanel setUpButtonsInSadPanel() {
+        JPanel sadButtonsPanel = new JPanel();
+        sadButtonsPanel.setLayout(new GridLayout(1,4,0,10));
+        sadButtonsPanel.setVisible(true);
+
+    
+        sadButtonsPanel.add(designButtonLabel(guilty, "Guilty"));
+        sadButtonsPanel.add(designButtonLabel(abandoned, "Abandoned"));
+        sadButtonsPanel.add(designButtonLabel(despair, "Despair"));
+        sadButtonsPanel.add(designButtonLabel(depressed, "Depressed"));
+        sadButtonsPanel.add(designButtonLabel(lonely, "Lonely"));
+        sadButtonsPanel.add(designButtonLabel(bored, "Bored"));
+
+
+        return sadButtonsPanel;
+    }
+
+
+
 
      public JFrame disgustFrame() {
         JFrame disgustFrame = new JFrame();
@@ -472,21 +715,60 @@ public class EmotionsGUI {
     }
 
 
-
     public JFrame angerFrame() {
         JFrame angerFrame = new JFrame();
         angerFrame.setSize(1000,600);
-        angerFrame.setTitle("More Angry Emotions!");
+        angerFrame.setTitle("More Anger Emotions!");
 
-        JPanel angerPanel = new JPanel();
-        angerPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
-
-        angerFrame.add(angerPanel);
-
+        setUpMoreAngerPanel();
+        angerFrame.add(moreAngerPanel);
+        angerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         angerFrame.setVisible(true);
 
         return angerFrame;
     }
+
+
+
+     public JPanel setUpMoreAngerPanel() {
+        moreAngerPanel = new JPanel();
+        moreAngerPanel.setLayout(new GridLayout(2,0,-200,-100));
+        moreAngerPanel.setBorder(BorderFactory.createEmptyBorder(100,50,50,50));
+        moreAngerPanel.setVisible(true);
+
+        JLabel angerTitle = new JLabel("Getting a little more specific, I am feeling...");
+        angerTitle.setVerticalAlignment(JLabel.TOP);
+        angerTitle.setHorizontalAlignment(JLabel.CENTER);
+        angerTitle.setFont(new Font("Monospaced Bold", Font.BOLD, 29));
+
+        moreAngerPanel.add(angerTitle);
+        moreAngerPanel.add(setUpButtonsInMoreAngerPanel());
+
+        return moreDisgustPanel;
+    }
+
+
+    public JPanel setUpButtonsInMoreAngerPanel() {
+        JPanel angerButtonsPanel = new JPanel();
+        angerButtonsPanel.setLayout(new GridLayout(2,4,0,10));
+        angerButtonsPanel.setVisible(true);
+
+    
+        angerButtonsPanel.add(designButtonLabel(critical, "Critical"));
+        angerButtonsPanel.add(designButtonLabel(distant, "Distant"));
+        angerButtonsPanel.add(designButtonLabel(frustrated, "Frustrated"));
+        angerButtonsPanel.add(designButtonLabel(aggressive, "Aggressive"));
+        angerButtonsPanel.add(designButtonLabel(mad, "Mad"));
+        angerButtonsPanel.add(designButtonLabel(hateful, "Hateful"));
+        angerButtonsPanel.add(designButtonLabel(threatened, "Threatened"));
+        angerButtonsPanel.add(designButtonLabel(hurt, "Hurt"));
+
+
+        return angerButtonsPanel;
+    }
+
+
+
 
 
 
