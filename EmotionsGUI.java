@@ -80,7 +80,7 @@ public class EmotionsGUI {
     public EmotionsGUI() {
         profileFrame = new JFrame();
         profileDimension = new Dimension(1000, 600);
-        profileFrame.setTitle("Emotional Awareness App");
+        profileFrame.setTitle("How Do You Feel App");
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
         profileFrame.add(profilePanel);
@@ -119,11 +119,11 @@ public class EmotionsGUI {
 
 
     public void makeProfileDetails() {
-        title = new JLabel("EMOTIONAL AWARENESS");
+        title = new JLabel("HOW DO YOU FEEL?");
         title.setFont(new Font(Font.SERIF, Font.BOLD, 25));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        message = new JLabel("The ability to understand feelings ...");
+        message = new JLabel("Attributing specific words to our emotions can help us understand our feelings more clearly, avoid or resolve conflicts better, and move past difficult feelings more easily.");
         message.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         userName = new JLabel("Enter Username: ");
