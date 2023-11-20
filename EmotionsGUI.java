@@ -74,7 +74,7 @@ public class EmotionsGUI {
     public EmotionsGUI() {
         profileFrame = new JFrame();
         profileDimension = new Dimension(1000, 600);
-        profileFrame.setTitle("Emotional Awareness App");
+        profileFrame.setTitle("How Do You Feel App");
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
         profileFrame.add(profilePanel);
@@ -113,11 +113,11 @@ public class EmotionsGUI {
 
 
     public void makeProfileDetails() {
-        title = new JLabel("EMOTIONAL AWARENESS");
+        title = new JLabel("HOW DO YOU FEEL?");
         title.setFont(new Font(Font.SERIF, Font.BOLD, 25));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        message = new JLabel("The ability to understand feelings ...");
+        message = new JLabel("Becoming more aware of our emotions can help us talk about feelings more clearly, avoid or resolve conflicts better, and move past difficult feelings more easily");
         message.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         userName = new JLabel("Enter Username: ");
@@ -395,13 +395,13 @@ public class EmotionsGUI {
     public void confusedDialog() {
         JFrame confusedDialogFrame = new JFrame("Message!");
         confusedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(confusedDialogFrame, "Take a moment and be present.", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(confusedDialogFrame, "Think about what's confusing you, maybe take a moment to write things down and organize your thoughts.", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void amazedDialog() {
         JFrame amazedDialogFrame = new JFrame("Message!");
         amazedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(amazedDialogFrame, "Take a second, and keep on kicking on.", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(amazedDialogFrame, "Amazing! Take a second, and keep on kicking on.", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void excitedDialog() {
@@ -420,28 +420,28 @@ public class EmotionsGUI {
     public void disappointedDialog() {
         JFrame disappointedDialogFrame = new JFrame("Message!");
         disappointedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(disappointedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(disappointedDialogFrame, "Sometimes things don't turn out the way we want things to. It is okay to feel dissapointed.", null, JOptionPane.INFORMATION_MESSAGE);
 
     }
 
     public void awfulDialog() {
         JFrame awfulDialogFrame = new JFrame("Message!");
         awfulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(awfulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(awfulDialogFrame, "It is normal to feel awful sometimes. Take a deep breath.", null, JOptionPane.INFORMATION_MESSAGE);
 
     }
 
     public void avoidanceDialog() {
         JFrame avoidanceDialogFrame = new JFrame("Message!");
         avoidanceDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(avoidanceDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(avoidanceDialogFrame, "It is good to step out of your comfort zone, but you dont have to be moving forward all the time. Take a moment to rest and relax.", null, JOptionPane.INFORMATION_MESSAGE);
 
     }
 
     public void joyfulDialog() {
         JFrame joyfulDialogFrame = new JFrame("Message!");
         joyfulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(joyfulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(joyfulDialogFrame, "YIPEEE!", null, JOptionPane.INFORMATION_MESSAGE);
 
     }
 
@@ -460,19 +460,19 @@ public class EmotionsGUI {
     public void acceptedDialog() {
         JFrame acceptedDialogFrame = new JFrame("Message!");
         acceptedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(acceptedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(acceptedDialogFrame, "Happy for you !!!", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void powerfulDialog() {
         JFrame powerfulDialogFrame = new JFrame("Message!");
         powerfulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(powerfulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(powerfulDialogFrame, "RAHHHHHHHH", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void peacefulDialog() {
         JFrame peacefulDialogFrame = new JFrame("Message!");
         peacefulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(peacefulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(peacefulDialogFrame, "Feel the world around you", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void intimateDialog() {
