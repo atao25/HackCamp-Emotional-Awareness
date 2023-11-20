@@ -29,7 +29,7 @@ public class EmotionsGUI {
     // first layer emoji frame
     private JFrame primaryFrame;
     private JPanel primaryPanel;
-    private Dimension primaryDimension;
+    //private Dimension primaryDimension;
 
     private JButton happy;
     private JButton sad;
@@ -37,14 +37,21 @@ public class EmotionsGUI {
     private JButton fear;
     private JButton anger;
     private JButton surprise;
-   // private JButton back1;
 
 
 
     // second layer emoji frame
-    private JFrame secondary;
-   // private JButton back2;
+    private JPanel moreSurprisePanel;
+    private JButton startled;
+    private JButton confused;
+    private JButton amazed;
+    private JButton excited;
 
+    private JPanel moreDisgustPanel;
+    private JButton disapproval;
+    private JButton disappointed;
+    private JButton awful;
+    private JButton avoidance;
 
 
     public static void main (String[] args) {
@@ -237,7 +244,15 @@ public class EmotionsGUI {
                 angerFrame();
             }
         });
-        } else {
+        } else if (buttonName.equals("Startled")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                startledDialog();
+            }
+        });  
+        }
+        else {
             button.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -245,16 +260,40 @@ public class EmotionsGUI {
             }
         });
         }
+    }
        
         buttonLabel.add(button);
         buttonLabel.add(text);
         buttonLabel.setVisible(true);
-        
     
         return buttonLabel;
-
-        
+ 
     }
+
+    public void startledDialog() {
+        JFrame startledDialogFrame = new JFrame("Message!");
+        startledDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(startledDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    // private void deleteDialog() {
+    //     int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this meal?",
+    //             "Confirm Delete", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+    //     switch (result) {
+    //         case JOptionPane.NO_OPTION:
+    //             // don't do anything, close the dialog
+    //             break;
+
+    //         case JOptionPane.YES_OPTION:
+    //             int selectedMeal = wishList.getSelectedIndex();
+    //             wishListModel.remove(selectedMeal);
+    //             mealWishList.removeMealByIndex(selectedMeal);
+    //     }
+
+    // }
+
+
 
     public JFrame happyFrame() {
         JFrame happyFrame = new JFrame();
@@ -270,6 +309,9 @@ public class EmotionsGUI {
 
         return happyFrame;
     }
+
+
+
 
       public JFrame sadFrame() {
         JFrame sadFrame = new JFrame();
@@ -289,22 +331,56 @@ public class EmotionsGUI {
      public JFrame disgustFrame() {
         JFrame disgustFrame = new JFrame();
         disgustFrame.setSize(1000,600);
-        disgustFrame.setTitle("More disgust Emotions!");
+        disgustFrame.setTitle("More Disgusted Emotions!");
 
-        JPanel disgustPanel = new JPanel();
-        disgustPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
-
-        disgustFrame.add(disgustPanel);
-
+        setUpMoreDisgustPanel();
+        disgustFrame.add(moreDisgustPanel);
+        disgustFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         disgustFrame.setVisible(true);
 
         return disgustFrame;
     }
 
+
+
+     public JPanel setUpMoreDisgustPanel() {
+        moreDisgustPanel = new JPanel();
+        moreDisgustPanel.setLayout(new GridLayout(2,0,-200,-100));
+        moreDisgustPanel.setBorder(BorderFactory.createEmptyBorder(100,50,50,50));
+        moreDisgustPanel.setVisible(true);
+
+        JLabel disgustTitle = new JLabel("Getting a little more specific, I am feeling...");
+        disgustTitle.setVerticalAlignment(JLabel.TOP);
+        disgustTitle.setHorizontalAlignment(JLabel.CENTER);
+        disgustTitle.setFont(new Font("Monospaced Bold", Font.BOLD, 29));
+
+        moreDisgustPanel.add(disgustTitle);
+        moreDisgustPanel.add(setUpButtonsInDisgustPanel());
+
+        return moreDisgustPanel;
+    }
+
+    public JPanel setUpButtonsInDisgustPanel() {
+        JPanel disgustButtonsPanel = new JPanel();
+        disgustButtonsPanel.setLayout(new GridLayout(1,4,0,10));
+        disgustButtonsPanel.setVisible(true);
+
+    
+        disgustButtonsPanel.add(designButtonLabel(disapproval, "Disapproval"));
+        disgustButtonsPanel.add(designButtonLabel(disappointed, "Disappointed"));
+        disgustButtonsPanel.add(designButtonLabel(awful, "Awful"));
+        disgustButtonsPanel.add(designButtonLabel(avoidance, "Avoidance"));
+
+
+        return disgustButtonsPanel;
+    }
+
+
+
     public JFrame angerFrame() {
         JFrame angerFrame = new JFrame();
         angerFrame.setSize(1000,600);
-        angerFrame.setTitle("More Happy Emotions!");
+        angerFrame.setTitle("More Angry Emotions!");
 
         JPanel angerPanel = new JPanel();
         angerPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
@@ -321,7 +397,7 @@ public class EmotionsGUI {
     public JFrame fearFrame() {
         JFrame fearFrame = new JFrame();
         fearFrame.setSize(1000,600);
-        fearFrame.setTitle("More Happy Emotions!");
+        fearFrame.setTitle("More Fearful Emotions!");
 
         JPanel fearPanel = new JPanel();
         fearPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
@@ -336,21 +412,47 @@ public class EmotionsGUI {
      public JFrame surpriseFrame() {
         JFrame surpriseFrame = new JFrame();
         surpriseFrame.setSize(1000,600);
-        surpriseFrame.setTitle("More Happy Emotions!");
+        surpriseFrame.setTitle("More Surprised Emotions!");
 
-        JPanel surprisePanel = new JPanel();
-        surprisePanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
-
-        surpriseFrame.add(surprisePanel);
-
+        setUpMoreSurprisePanel();
+        surpriseFrame.add(moreSurprisePanel);
+        surpriseFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         surpriseFrame.setVisible(true);
 
         return surpriseFrame;
     }
 
+    public JPanel setUpMoreSurprisePanel() {
+        moreSurprisePanel = new JPanel();
+        moreSurprisePanel.setLayout(new GridLayout(2,0,-200,-100));
+        moreSurprisePanel.setBorder(BorderFactory.createEmptyBorder(100,50,50,50));
+        moreSurprisePanel.setVisible(true);
 
+        JLabel surpriseTitle = new JLabel("Getting a little more specific, I am feeling...");
+        surpriseTitle.setVerticalAlignment(JLabel.TOP);
+        surpriseTitle.setHorizontalAlignment(JLabel.CENTER);
+        surpriseTitle.setFont(new Font("Monospaced Bold", Font.BOLD, 29));
+
+        moreSurprisePanel.add(surpriseTitle);
+        moreSurprisePanel.add(setUpButtonsInSuprisePanel());
+
+        return moreSurprisePanel;
+    }
+
+    public JPanel setUpButtonsInSuprisePanel() {
+        JPanel surpriseButtonsPanel = new JPanel();
+        surpriseButtonsPanel.setLayout(new GridLayout(1,4,0,10));
+        surpriseButtonsPanel.setVisible(true);
 
     
+        surpriseButtonsPanel.add(designButtonLabel(startled, "Startled"));
+        surpriseButtonsPanel.add(designButtonLabel(amazed, "Amazed"));
+        surpriseButtonsPanel.add(designButtonLabel(excited, "Excited"));
+        surpriseButtonsPanel.add(designButtonLabel(confused, "Confused"));
+
+
+        return surpriseButtonsPanel;
+    }
 
 
     public JButton designButton(JButton button, String buttonName) {
@@ -362,89 +464,11 @@ public class EmotionsGUI {
         return button;
 
     }
-
-
-
+    
 
 } 
 
 
-//  private void deleteDialog() {
-//         int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this meal?",
-//                 "Confirm Delete", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-
-//         switch (result) {
-//             case JOptionPane.NO_OPTION:
-//                 // don't do anything, close the dialog
-//                 break;
-
-//             case JOptionPane.YES_OPTION:
-//                 int selectedMeal = wishList.getSelectedIndex();
-//                 wishListModel.remove(selectedMeal);
-//                 mealWishList.removeMealByIndex(selectedMeal);
-//         }
 
 
 
-
-
-
-
-//  if (buttonName.equals("Happy")) {
-//             button.addActionListener(new AbstractAction() {
-//                 @Override
-//                 public void actionPerformed(ActionEvent e) {
-//                     happyFrame();
-//                 }
-//         });
-//         }
-
-//         if (buttonName.equals("Sad")) {
-//             button.addActionListener(new AbstractAction() {
-//                 @Override
-//                 public void actionPerformed(ActionEvent e) {
-//                     sadFrame();
-//                 }
-//         });
-//         }
-
-//          if (buttonName.equals("Disgust")) {
-//             button.addActionListener(new AbstractAction() {
-//                 @Override
-//                 public void actionPerformed(ActionEvent e) {
-//                     disgustFrame();
-//                 }
-//         });
-//         }
-
-//          if (buttonName.equals("Anger")) {
-//             button.addActionListener(new AbstractAction() {
-//                 @Override
-//                 public void actionPerformed(ActionEvent e) {
-//                     angerFrame();
-//                 }
-//         });
-//         }
-
-//          if (buttonName.equals("Fear")) {
-//             button.addActionListener(new AbstractAction() {
-//                 @Override
-//                 public void actionPerformed(ActionEvent e) {
-//                     fearFrame();
-//                 }
-//         });
-//         }
-
-//         else {
-//             (buttonName.equals("Surprise")) {
-//             button.addActionListener(new AbstractAction() {
-//                 @Override
-//                 public void actionPerformed(ActionEvent e) {
-//                     surpriseFrame();
-//                 }
-//         });
-//         }
-        
-
-//         }
-//     }
