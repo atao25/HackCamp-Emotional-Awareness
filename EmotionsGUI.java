@@ -1,4 +1,4 @@
-import javax.imageio.ImageIO;
+ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -251,6 +251,55 @@ public class EmotionsGUI {
                 startledDialog();
             }
         });  
+        } else if (buttonName.equals("Confused")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                confusedDialog();
+            }
+        });  
+        } else if (buttonName.equals("Amazed")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                amazedDialog();
+            }
+        });  
+        } else if (buttonName.equals("Excited")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                excitedDialog();
+            }
+        });  
+        } else if (buttonName.equals("Disapproval")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                disapprovalDialog();
+            }
+        });  
+        } else if (buttonName.equals("Disappointed")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                disappointedDialog();
+            }
+        });  
+        } else if (buttonName.equals("Awful")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                awfulDialog();
+            }
+        });  
+        } else if (buttonName.equals("Avoidance")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                avoidanceDialog();
+            }
+        });  
         }
         else {
             button.addActionListener(new AbstractAction() {
@@ -274,6 +323,54 @@ public class EmotionsGUI {
         startledDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JOptionPane.showMessageDialog(startledDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
     }
+
+    public void confusedDialog() {
+        JFrame confusedDialogFrame = new JFrame("Message!");
+        confusedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(confusedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void amazedDialog() {
+        JFrame amazedDialogFrame = new JFrame("Message!");
+        amazedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(amazedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void excitedDialog() {
+        JFrame excitedDialogFrame = new JFrame("Message!");
+        excitedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(excitedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void disapprovalDialog() {
+        JFrame disapprovalDialogFrame = new JFrame("Message!");
+        disapprovalDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(disapprovalDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void disappointedDialog() {
+        JFrame disappointedDialogFrame = new JFrame("Message!");
+        disappointedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(disappointedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void awfulDialog() {
+        JFrame awfulDialogFrame = new JFrame("Message!");
+        awfulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(awfulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    public void avoidanceDialog() {
+        JFrame avoidanceDialogFrame = new JFrame("Message!");
+        avoidanceDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(avoidanceDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+
 
     // private void deleteDialog() {
     //     int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this meal?",
