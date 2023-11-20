@@ -182,29 +182,16 @@ public class EmotionsGUI {
 
 
     public JPanel setUpButtonsInPrimaryPanel() {
-        JButton joyful = new JButton();
-        JButton interested = new JButton();
-        JButton proud = new JButton();
-        JButton accepted = new JButton();
-        JButton powerful = new JButton();
-        JButton peaceful = new JButton();
-        JButton intimate = new JButton();
-        JButton optimistic = new JButton();
-
-
-
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setLayout(new GridLayout(2, 3, 20, 0));
         buttonsPanel.setVisible(true);
 
-        buttonsPanel.add(designButtonLabel(joyful, "Joyful"));
-        buttonsPanel.add(designButtonLabel(interested, "Interested"));
-        buttonsPanel.add(designButtonLabel(proud, "Proud"));
-        buttonsPanel.add(designButtonLabel(accepted, "Accepted"));
-        buttonsPanel.add(designButtonLabel(powerful, "Powerful"));
-        buttonsPanel.add(designButtonLabel(peaceful, "Peaceful"));
-        buttonsPanel.add(designButtonLabel(intimate, "Intimate"));
-        buttonsPanel.add(designButtonLabel(optimistic, "Optimistic"));
+        buttonsPanel.add(designButtonLabel(happy, "Happy"));
+        buttonsPanel.add(designButtonLabel(sad, "Sad"));
+        buttonsPanel.add(designButtonLabel(anger, "Anger"));
+        buttonsPanel.add(designButtonLabel(fear, "Fear"));
+        buttonsPanel.add(designButtonLabel(disgust, "Disgust"));
+        buttonsPanel.add(designButtonLabel(surprise, "Surprise"));
 
         return buttonsPanel;
 
@@ -273,7 +260,6 @@ public class EmotionsGUI {
             }
         });
         }
-    }
        
         buttonLabel.add(button);
         buttonLabel.add(text);
@@ -289,7 +275,6 @@ public class EmotionsGUI {
         JOptionPane.showMessageDialog(startledDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
     }
 
-<<<<<<< HEAD
     // private void deleteDialog() {
     //     int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this meal?",
     //             "Confirm Delete", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -306,48 +291,6 @@ public class EmotionsGUI {
     //     }
 
     // }
-=======
-    public JFrame happySecondaryEmotionsFrame(JFrame frame) {
-        frame.setVisible(true);
-        
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(2, 0, -200,-100));
-        panel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
-        panel.setVisible(true);
-        frame.add(panel);
-
-        JLabel secondaryTitle = new JLabel();
-        secondaryTitle.setText("Getting a little more specific, I am feeling...");
-        secondaryTitle.setVerticalAlignment(JLabel.TOP);
-        secondaryTitle.setFont(new Font("Monospaced Bold",Font.BOLD, 29));
-        secondaryTitle.setHorizontalAlignment(JLabel.CENTER);
-
-        panel.add(secondaryTitle);
-        panel.add(setUpButtonsInHappySecondaryPanel());
-
-        return frame;
-
-    }
-
-    public JPanel setUpButtonsInHappySecondaryPanel() {
-        JPanel buttonsPanel = new JPanel();
-        buttonsPanel.setLayout(new GridLayout(2, 4, 20, 0));
-        buttonsPanel.setVisible(true);
-
-        buttonsPanel.add(designButtonLabel(happy, "Happy"));
-        buttonsPanel.add(designButtonLabel(sad, "Sad"));
-        buttonsPanel.add(designButtonLabel(anger, "Anger"));
-        buttonsPanel.add(designButtonLabel(fear, "Fear"));
-        buttonsPanel.add(designButtonLabel(disgust, "Disgust"));
-        buttonsPanel.add(designButtonLabel(surprise, "Surprise"));
-
-        return buttonsPanel;
-
-    }
-
-
-
->>>>>>> d7b920b28727d4536b06936b8730f4e6ef082cbb
 
 
 
@@ -356,12 +299,15 @@ public class EmotionsGUI {
         happyFrame.setSize(1000,600);
         happyFrame.setTitle("More Happy Emotions!");
 
-        return happySecondaryEmotionsFrame(happyFrame);
+        JPanel happyPanel = new JPanel();
+        happyPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
+
+        happyFrame.add(happyPanel);
+
+        happyFrame.setVisible(true);
+
+        return happyFrame;
     }
-
-
-
-
 
 
 
@@ -520,6 +466,8 @@ public class EmotionsGUI {
     
 
 } 
+
+
 
 
 
