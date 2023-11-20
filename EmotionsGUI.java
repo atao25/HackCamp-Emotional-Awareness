@@ -53,6 +53,18 @@ public class EmotionsGUI {
     private JButton awful;
     private JButton avoidance;
 
+    private JPanel moreHappyPanel;
+    private JButton joyful;
+    private JButton interested;
+    private JButton proud;
+    private JButton accepted;
+    private JButton powerful;
+    private JButton peaceful;
+    private JButton intimate;
+    private JButton optimistic;
+
+
+
 
     public static void main (String[] args) {
         new EmotionsGUI();
@@ -300,6 +312,62 @@ public class EmotionsGUI {
                 avoidanceDialog();
             }
         });  
+        } else if (buttonName.equals("Joyful")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                joyfulDialog();
+            }
+        });  
+        } else if (buttonName.equals("Interested")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                interestedDialog();
+            }
+        });  
+        } else if (buttonName.equals("Proud")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                proudDialog();
+            }
+        });  
+        } else if (buttonName.equals("Accepted")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acceptedDialog();
+            }
+        });  
+        } else if (buttonName.equals("Powerful")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                powerfulDialog();
+            }
+        });  
+        } else if (buttonName.equals("Peaceful")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                peacefulDialog();
+            }
+        });  
+        } else if (buttonName.equals("Intimate")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                intimateDialog();
+            }
+        });  
+        } else if (buttonName.equals("Optimistic")) {
+            button.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                optimisticDialog();
+            }
+        });  
         }
         else {
             button.addActionListener(new AbstractAction() {
@@ -370,24 +438,56 @@ public class EmotionsGUI {
 
     }
 
+    public void joyfulDialog() {
+        JFrame joyfulDialogFrame = new JFrame("Message!");
+        joyfulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(joyfulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
 
+    }
 
-    // private void deleteDialog() {
-    //     int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this meal?",
-    //             "Confirm Delete", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+     public void interestedDialog() {
+        JFrame interestedDialogFrame = new JFrame("Message!");
+        interestedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(interestedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
 
-    //     switch (result) {
-    //         case JOptionPane.NO_OPTION:
-    //             // don't do anything, close the dialog
-    //             break;
+    public void proudDialog() {
+        JFrame proudDialogFrame = new JFrame("Message!");
+        proudDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(proudDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
 
-    //         case JOptionPane.YES_OPTION:
-    //             int selectedMeal = wishList.getSelectedIndex();
-    //             wishListModel.remove(selectedMeal);
-    //             mealWishList.removeMealByIndex(selectedMeal);
-    //     }
+    public void acceptedDialog() {
+        JFrame acceptedDialogFrame = new JFrame("Message!");
+        acceptedDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(acceptedDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
 
-    // }
+    public void powerfulDialog() {
+        JFrame powerfulDialogFrame = new JFrame("Message!");
+        powerfulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(powerfulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void peacefulDialog() {
+        JFrame peacefulDialogFrame = new JFrame("Message!");
+        peacefulDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(peacefulDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void intimateDialog() {
+        JFrame intimateDialogFrame = new JFrame("Message!");
+        intimateDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(intimateDialogFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void optimisticDialog() {
+        JFrame optimisticDialoFrame = new JFrame("Message!");
+        optimisticDialoFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(optimisticDialoFrame, "Take a deep breath", null, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    
 
 
 
@@ -396,17 +496,50 @@ public class EmotionsGUI {
         happyFrame.setSize(1000,600);
         happyFrame.setTitle("More Happy Emotions!");
 
-        JPanel happyPanel = new JPanel();
-        happyPanel.setBorder(BorderFactory.createEmptyBorder(100, 50, 50, 50));
-
-        happyFrame.add(happyPanel);
-
+        setUpMoreHappyPanel();
+        happyFrame.add(moreHappyPanel);
+        happyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         happyFrame.setVisible(true);
 
         return happyFrame;
     }
 
+    public JPanel setUpMoreHappyPanel() {
+        moreHappyPanel = new JPanel();
+        moreHappyPanel.setLayout(new GridLayout(2,0,-200,-100));
+        moreHappyPanel.setBorder(BorderFactory.createEmptyBorder(100,50,50,50));
+        moreHappyPanel.setVisible(true);
 
+        JLabel happyTitle = new JLabel("Getting a little more specific, I am feeling...");
+        happyTitle.setVerticalAlignment(JLabel.TOP);
+        happyTitle.setHorizontalAlignment(JLabel.CENTER);
+        happyTitle.setFont(new Font("Monospaced Bold", Font.BOLD, 29));
+
+        moreHappyPanel.add(happyTitle);
+        moreHappyPanel.add(setUpButtonsInHappyPanel());
+
+
+        return moreHappyPanel;
+    }
+
+    public JPanel setUpButtonsInHappyPanel() {
+        JPanel happyButtonsPanel = new JPanel();
+        happyButtonsPanel.setLayout(new GridLayout(2,4,0,10));
+        happyButtonsPanel.setVisible(true);
+
+        happyButtonsPanel.add(designButtonLabel(joyful, "Joyful"));
+        happyButtonsPanel.add(designButtonLabel(interested, "Interested"));
+        happyButtonsPanel.add(designButtonLabel(proud, "Proud"));
+        happyButtonsPanel.add(designButtonLabel(accepted, "Accepted"));
+        happyButtonsPanel.add(designButtonLabel(powerful, "Powerful"));
+        happyButtonsPanel.add(designButtonLabel(peaceful, "Peaceful"));
+        happyButtonsPanel.add(designButtonLabel(intimate, "Intimate"));
+        happyButtonsPanel.add(designButtonLabel(optimistic, "Optimistic"));
+
+        return happyButtonsPanel;
+    }
+
+  
 
 
       public JFrame sadFrame() {
@@ -505,7 +638,7 @@ public class EmotionsGUI {
         return fearFrame;
     }
 
-     public JFrame surpriseFrame() {
+    public JFrame surpriseFrame() {
         JFrame surpriseFrame = new JFrame();
         surpriseFrame.setSize(1000,600);
         surpriseFrame.setTitle("More Surprised Emotions!");
