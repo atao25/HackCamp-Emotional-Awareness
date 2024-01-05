@@ -1,11 +1,7 @@
- import javax.imageio.ImageIO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Arrays;
 
 
 public class EmotionsGUI {
@@ -29,7 +25,8 @@ public class EmotionsGUI {
     // first layer emoji frame
     private JFrame primaryFrame;
     private JPanel primaryPanel;
-    //private Dimension primaryDimension;
+
+    private JButton back;
 
     private JButton happy;
     private JButton sad;
@@ -98,7 +95,7 @@ public class EmotionsGUI {
     public EmotionsGUI() {
         profileFrame = new JFrame();
         profileDimension = new Dimension(1000, 600);
-        profileFrame.setTitle("How Do You Feel App");
+        profileFrame.setTitle("EMOTIONAL AWARENESS APP");
         profileFrame.setSize(profileDimension.width, profileDimension.height);
         profilePanel = setUpProfilePanel();
         profileFrame.add(profilePanel);
@@ -125,13 +122,13 @@ public class EmotionsGUI {
 
     public JFrame loadPrimaryFrame() { 
         primaryFrame = new JFrame();
-        //primaryFrame = setTitle("Emotional Awareness: primary emotions");
+        //primaryFrame = setTitle("Emotional Awareness: Primary Emotions");
         primaryFrame.setSize(profileDimension.width, profileDimension.height);
         primaryPanel = setUpPrimaryPanel();
         primaryFrame.setVisible(true);
         primaryFrame.setResizable(false);
         primaryFrame.add(primaryPanel);
-        primaryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        primaryFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         return primaryFrame;
     }
 
@@ -155,8 +152,6 @@ public class EmotionsGUI {
         pw = new JPasswordField(15);
         pw.setAlignmentX(Component.LEFT_ALIGNMENT);
         pw.setMaximumSize(new Dimension(100,30));
-
-
 
         profilePanel.add(title);
         profilePanel.add(message);
@@ -187,7 +182,14 @@ public class EmotionsGUI {
         submit.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                loadPrimaryFrame();
+                String enteredUser = user.getText();
+                char[] enteredPassword = pw.getPassword();
+
+                if (enteredUser.isEmpty() || enteredPassword.length == 0 ) {
+                    JOptionPane.showMessageDialog(null, "Please enter both username and password");
+                } else {
+                    loadPrimaryFrame();
+                }
             }
         });
         return submit;
@@ -211,7 +213,6 @@ public class EmotionsGUI {
         primaryPanel.add(setUpButtonsInPrimaryPanel());
 
 
-
         return primaryPanel;
 
     }
@@ -232,7 +233,6 @@ public class EmotionsGUI {
         return buttonsPanel;
 
     }
-
 
     public JLabel designButtonLabel(JButton button, String buttonName) {
         JLabel text = new JLabel();
@@ -572,6 +572,7 @@ public class EmotionsGUI {
  
     }
 
+
     public void startledDialog() {
         JFrame startledDialogFrame = new JFrame("Message!");
         startledDialogFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -742,7 +743,6 @@ public class EmotionsGUI {
  
  
     }
-   
  
     public void rejectedDialog() {
         JFrame rejectedDialogFrame = new JFrame("Message!");
@@ -828,9 +828,6 @@ public class EmotionsGUI {
  
     }
  
-    
-
-
 
 
     public JFrame sadFrame() {
@@ -879,7 +876,6 @@ public class EmotionsGUI {
 
         return sadButtonsPanel;
     }
-
 
 
 
@@ -1044,8 +1040,6 @@ public class EmotionsGUI {
 
 
 
-
-
      public JFrame surpriseFrame() {
         JFrame surpriseFrame = new JFrame();
         surpriseFrame.setSize(1000,600);
@@ -1150,8 +1144,6 @@ public class EmotionsGUI {
         fearButtonsPanel.add(designButtonLabel(insecure, "Insecure"));
         fearButtonsPanel.add(designButtonLabel(anxious, "Anxious"));
         fearButtonsPanel.add(designButtonLabel(scared, "Scared"));
- 
- 
  
  
         return fearButtonsPanel;
